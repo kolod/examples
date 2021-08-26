@@ -1,0 +1,110 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(qcustomplot-static VERSION 2.1.0 LANGUAGES CXX)
+
+set(QCUSTOMPLOT_SOURCES
+	axis/axis.cpp
+	axis/axis.h
+	axis/axisticker.cpp
+	axis/axisticker.h
+	axis/axistickerdatetime.cpp
+	axis/axistickerdatetime.h
+	axis/axistickerfixed.cpp
+	axis/axistickerfixed.h
+	axis/axistickerlog.cpp
+	axis/axistickerlog.h
+	axis/axistickerpi.cpp
+	axis/axistickerpi.h
+	axis/axistickertext.cpp
+	axis/axistickertext.h
+	axis/axistickertime.cpp
+	axis/axistickertime.h
+	axis/labelpainter.cpp
+	axis/labelpainter.h
+	axis/range.cpp
+	axis/range.h
+	colorgradient.cpp
+	colorgradient.h
+	core.cpp
+	core.h
+	datacontainer.h
+	global.h
+	item.cpp
+	item.h
+	items/item-bracket.cpp
+	items/item-bracket.h
+	items/item-curve.cpp
+	items/item-curve.h
+	items/item-ellipse.cpp
+	items/item-ellipse.h
+	items/item-line.cpp
+	items/item-line.h
+	items/item-pixmap.cpp
+	items/item-pixmap.h
+	items/item-rect.cpp
+	items/item-rect.h
+	items/item-straightline.cpp
+	items/item-straightline.h
+	items/item-text.cpp
+	items/item-text.h
+	items/item-tracer.cpp
+	items/item-tracer.h
+	layer.cpp
+	layer.h
+	layout.cpp
+	layout.h
+	layoutelements/layoutelement-axisrect.cpp
+	layoutelements/layoutelement-axisrect.h
+	layoutelements/layoutelement-colorscale.cpp
+	layoutelements/layoutelement-colorscale.h
+	layoutelements/layoutelement-legend.cpp
+	layoutelements/layoutelement-legend.h
+	layoutelements/layoutelement-textelement.cpp
+	layoutelements/layoutelement-textelement.h
+	lineending.cpp
+	lineending.h
+	paintbuffer.cpp
+	paintbuffer.h
+	painter.cpp
+	painter.h
+	plottable.cpp
+	plottable.h
+	plottable1d.h
+	plottables/plottable-bars.cpp
+	plottables/plottable-bars.h
+	plottables/plottable-colormap.cpp
+	plottables/plottable-colormap.h
+	plottables/plottable-curve.cpp
+	plottables/plottable-curve.h
+	plottables/plottable-errorbar.cpp
+	plottables/plottable-errorbar.h
+	plottables/plottable-financial.cpp
+	plottables/plottable-financial.h
+	plottables/plottable-graph.cpp
+	plottables/plottable-graph.h
+	plottables/plottable-statisticalbox.cpp
+	plottables/plottable-statisticalbox.h
+	polar/layoutelement-angularaxis.cpp
+	polar/layoutelement-angularaxis.h
+	polar/polargraph.cpp
+	polar/polargraph.h
+	polar/polargrid.cpp
+	polar/polargrid.h
+	polar/radialaxis.cpp
+	polar/radialaxis.h
+	scatterstyle.cpp
+	scatterstyle.h
+	selection.cpp
+	selection.h
+	selectiondecorator-bracket.cpp
+	selectiondecorator-bracket.h
+	selectionrect.cpp
+	selectionrect.h
+	vector2d.cpp
+	vector2d.h
+)
+
+add_library(qcustomplot STATIC ${QCUSTOMPLOT_SOURCES})
+
+target_link_libraries(qcustomplot PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(qcustomplot PRIVATE Qt${QT_VERSION_MAJOR}::PrintSupport)
